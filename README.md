@@ -1,5 +1,6 @@
 # CGU_AI_NLP_2026
-大四下修的課，內容為自然語言處理 (NLP) 與大型語言模型 (LLM)相關的技術
+大四下修的課，內容為自然語言處理 (NLP) 與大型語言模型 (LLM)相關的技術(老師的課程連結:
+https://github.com/mcps5601/CGUNLP_2026_Spring)
 
 整個課程規劃共 16 週，從最基礎的傳統 NLP 概念一路銜接至當前最新的 LLM 技術與架構，課程包含:
 四次作業和一次期末 project(Kaggle competition)
@@ -37,6 +38,3 @@ LLM-3：高效訓練技術，包含高效參數微調 (PEFT / LoRA)。
 * 模型架構：基於 `deberta_v3_base`（Sequence Length = 512，Batch Size = 32）進行微調 。
 * 預測成績：Private Score: 0.7918 / Public Score: 0.7818（平均 CV QWK 達 0.7940） 。
 
-
-老師的課程連結:
-https://github.com/mcps5601/CGUNLP_2026_Spring
