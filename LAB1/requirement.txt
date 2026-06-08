@@ -1,0 +1,8 @@
+running environment: colab
+Python version: Colab (Python 3)
+pandas 版本: 2.2.2
+numpy 版本: 2.0.2
+gensim 版本: 4.4.0
+tqdm 版本: 4.67.3
+matplotlib 版本: 3.10.0
+scikit-learn (sklearn) 版本: 1.6.1
