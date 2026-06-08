@@ -1,0 +1,15 @@
+==================================================
+項目 		          | Version
+--------------------------------------------------
+Python                    | 3.12.13
+Running Environment       | Google Colab
+Claude			  | 2.1.81
+--------------------------------------------------
+torch (PyTorch)           | 2.10.0+cu128
+pandas                    | 2.2.2
+tqdm                      | 4.67.3
+scikit-learn (sklearn)    | 1.6.1
+transformers              | 5.0.0
+math                      | Built-in (Standard Library)
+time                      | Built-in (Standard Library)
+==================================================
