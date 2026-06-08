@@ -1,0 +1,35 @@
+{
+  "model": "qwen/qwen3-32b",
+  "results": [
+    {
+      "Q": "Q1",
+      "query": "請問蘋果公司(AAPL)目前的股價是多少？",
+      "model_call": "get_stock_price({\"symbol\": \"AAPL\"})",
+      "final_answer": "蘋果公司(AAPL)目前股價為150.25美元，漲幅1.2%。"
+    },
+    {
+      "Q": "Q2",
+      "query": "台北(Taipei)現在的天氣如何？",
+      "model_call": "get_weather({\"city\": \"Taipei\"})",
+      "final_answer": "目前台北的氣溫為25°C，天氣多雲，濕度70%，風速12公里/小時。"
+    },
+    {
+      "Q": "Q3",
+      "query": "請給我最新的科技(tech)新聞",
+      "model_call": "get_news({\"category\": \"tech\"})",
+      "final_answer": "以下是最新科技新聞：\n1. 2024-01-24 蘋果 Vision Pro 2 發表，重量降至 400g，電池續航提升至 4 小時，售價 3,499 美元。\n2. 2024-01-23 微軟 Copilot 整合 Office 全系列，企業用戶文件處理時間平均縮短 35%。\n3. 2024-01-22 Anthropic Claude 4 在程式碼測試得分 92.3，超越 GPT-5 的 89.7 分。\n4. 2024-01-21 NVIDIA H200 GPU 等待期超 12 個月，雲端廠商已預訂 2025 全年出貨。\n5. 2024-01-20 特斯拉 FSD v13 在美國全面開放無人監督模式，事故率降低 45%。"
+    },
+    {
+      "Q": "Q4",
+      "query": "請問微軟(MSFT)的股價是多少？",
+      "model_call": "get_stock_price({\"symbol\": \"MSFT\"})",
+      "final_answer": "查無該資料。"
+    },
+    {
+      "Q": "Q5",
+      "query": "你好！請問你是什麼人工智慧模型？",
+      "model_call": "無呼叫工具",
+      "final_answer": "我是Function Calling AI助理，我會根據你的問題判斷是否需要呼叫工具來取得即時數據。"
+    }
+  ]
+}

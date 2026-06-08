@@ -1,0 +1,35 @@
+{
+  "model": "llama-3.3-70b-versatile",
+  "results": [
+    {
+      "Q": "Q1",
+      "query": "請問蘋果公司(AAPL)目前的股價是多少？",
+      "model_call": "get_stock_price({\"symbol\": \"AAPL\"})",
+      "final_answer": "根據查詢結果，Apple Inc. 目前的股價是 150.25 美元，較前日上漲了 1.2%。"
+    },
+    {
+      "Q": "Q2",
+      "query": "台北(Taipei)現在的天氣如何？",
+      "model_call": "get_weather({\"city\": \"Taipei\"})",
+      "final_answer": "台北現在的天氣是多雲，溫度為25度，濕度為70%，風速為每小時12公里。"
+    },
+    {
+      "Q": "Q3",
+      "query": "請給我最新的科技(tech)新聞",
+      "model_call": "get_news({\"category\": \"tech\"})",
+      "final_answer": "根據最新的科技新聞，蘋果發表了 Vision Pro 2，重量大幅減輕至 400g，電池續航提升至 4 小時，售價維持 3,499 美元。"
+    },
+    {
+      "Q": "Q4",
+      "query": "請問微軟(MSFT)的股價是多少？",
+      "model_call": "get_stock_price({\"symbol\": \"MSFT\"})",
+      "final_answer": "查無該資料。"
+    },
+    {
+      "Q": "Q5",
+      "query": "你好！請問你是什麼人工智慧模型？",
+      "model_call": "無呼叫工具",
+      "final_answer": "你好！我是你的 Function Calling AI 助理，可以幫你查詢股價、天氣以及最新新聞。"
+    }
+  ]
+}
