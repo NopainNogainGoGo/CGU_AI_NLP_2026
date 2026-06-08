@@ -38,3 +38,4 @@ LLM-3：高效訓練技術，包含高效參數微調 (PEFT / LoRA)。
 * 模型架構：基於 `deberta_v3_base`（Sequence Length = 512，Batch Size = 32）進行微調 。
 * 預測成績：Private Score: 0.7918 / Public Score: 0.7818（平均 CV QWK 達 0.7940） 。
 
+## 期末報告影片: https://drive.google.com/drive/u/0/my-drive
