@@ -24,25 +24,18 @@ LLM-3：高效訓練技術，包含高效參數微調 (PEFT / LoRA)。
 以Learning Agency Lab – Automated Essay Scoring 2.0 (AES 2.0)為題 ，從資料特徵、QWK 評估指標，一路上克服了標籤落差、資料不平衡等難關 。最終成功在 Kaggle 平台上拿下了 **Private Score 0.7918 / Public Score 0.7818** 的成績
 
 ## 1. 優化策略
-*
-捨棄傳統分類，改採回歸任務（Regression）： 若將 1~6 分當作傳統多元分類，模型會失去類別間的「距離感」與「順序感」。因此我採用均方誤差（MSE）作為損失函數（Loss Function），讓模型輸出連續的浮點數（例如 3.42 分），使模型的訓練邏輯與比賽指標 QWK（二次加權 Kappa）高度契合 。
-*
-動態閾值優化（Threshold Optimization）：針對回歸輸出的連續浮點數，捨棄了四捨五入，引入Nelder-Mead 演算法在驗證集上反覆尋找完美的切分點 ，最終成功得出更高的 QWK 分數 。
+*捨棄傳統分類，改採回歸任務（Regression）： 若將 1~6 分當作傳統多元分類，模型會失去類別間的「距離感」與「順序感」。因此我採用均方誤差（MSE）作為損失函數（Loss Function），讓模型輸出連續的浮點數（例如 3.42 分），使模型的訓練邏輯與比賽指標 QWK（二次加權 Kappa）高度契合 。
+*動態閾值優化（Threshold Optimization）：針對回歸輸出的連續浮點數，捨棄了四捨五入，引入Nelder-Mead 演算法在驗證集上反覆尋找完美的切分點 ，最終成功得出更高的 QWK 分數 。
 
 ## 2. Pseudo-Labeling & Label Alignment
-*
-找出 Domain Shift 問題：我發現直接將學術語料庫 PERSUADE 2.0（2.5 萬筆）與AES 2.0 競賽資料（1.7 萬筆）混合做兩階段訓練效果不佳，觀察到新舊資料存在評分標準不一的「標籤落差」。
-*
-實作偽標籤對齊：先用標籤正確的 AES 2.0 新資料訓練一個 DeBERTa 模型，回頭去預測 PERSUADE 2.0 舊資料，輸出浮點數偽標籤（如 3.42、4.78 分）。
-* 
-最後將「新資料」與「重新預測的浮點數舊資料」打包混合訓練，成功增強了模型的語意理解與泛化能力 。
+*找出 Domain Shift 問題：我發現直接將學術語料庫 PERSUADE 2.0（2.5 萬筆）與AES 2.0 競賽資料（1.7 萬筆）混合做兩階段訓練效果不佳，觀察到新舊資料存在評分標準不一的「標籤落差」。
+*實作偽標籤對齊：先用標籤正確的 AES 2.0 新資料訓練一個 DeBERTa 模型，回頭去預測 PERSUADE 2.0 舊資料，輸出浮點數偽標籤（如 3.42、4.78 分）。
+* 最後將「新資料」與「重新預測的浮點數舊資料」打包混合訓練，成功增強了模型的語意理解與泛化能力 。
 
 
 ## 3. 實作成果與數據
-* 
-**核心模型架構：** 基於 `deberta_v3_base`（Sequence Length = 512，Batch Size = 32）進行微調 。
-* 
-**最終預測成績：** **Private Score: 0.7918 / Public Score: 0.7818**（平均 CV QWK 達 0.7940） 。
+* 模型架構：基於 `deberta_v3_base`（Sequence Length = 512，Batch Size = 32）進行微調 。
+* 預測成績：Private Score: 0.7918 / Public Score: 0.7818（平均 CV QWK 達 0.7940） 。
 
 
 老師的課程連結:
